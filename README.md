@@ -1,5 +1,7 @@
 # 🗺️ Sistem Rekomendasi Lokasi Usaha — Sulawesi Selatan
 
+![alt text](<Cuplikan layar 2026-04-28 185823.png>)
+
 <div align="center">
 
 ![R](https://img.shields.io/badge/R-4.3%2B-276DC3?style=for-the-badge&logo=r&logoColor=white)
@@ -15,27 +17,27 @@
 
 ## 📌 Deskripsi Proyek
 
-Proyek ini merupakan tugas akhir mata kuliah **Machine Learning** pada Program Studi **Bisnis Digital, Universitas Negeri Makassar (UNM)**. Sistem ini membantu pelaku usaha dan UMKM dalam menentukan lokasi bisnis yang paling strategis di Sulawesi Selatan dengan memanfaatkan dua pendekatan *clustering*:
+Proyek ini merupakan tugas akhir mata kuliah **Machine Learning** pada Program Studi **Bisnis Digital, Universitas Negeri Makassar (UNM)**. Sistem ini membantu pelaku usaha dan UMKM dalam menentukan lokasi bisnis yang paling strategis di Sulawesi Selatan dengan memanfaatkan dua pendekatan _clustering_:
 
 - **K-Means Clustering** — mengelompokkan lokasi berdasarkan kesamaan fitur numerik
-- **DBSCAN** *(Density-Based Spatial Clustering of Applications with Noise)* — mendeteksi klaster berdasarkan kepadatan spasial dan mengidentifikasi *outlier/noise*
+- **DBSCAN** _(Density-Based Spatial Clustering of Applications with Noise)_ — mendeteksi klaster berdasarkan kepadatan spasial dan mengidentifikasi _outlier/noise_
 
-Data yang digunakan adalah data simulasi (*dummy*) yang merepresentasikan titik usaha dari **Google Maps** di berbagai kota/kabupaten di Sulawesi Selatan.
+Data yang digunakan adalah data simulasi (_dummy_) yang merepresentasikan titik usaha dari **Google Maps** di berbagai kota/kabupaten di Sulawesi Selatan.
 
 ---
 
 ## ✨ Fitur Utama
 
-| Fitur | Deskripsi |
-|---|---|
+| Fitur                      | Deskripsi                                                                            |
+| -------------------------- | ------------------------------------------------------------------------------------ |
 | 🏠 **Beranda (Dashboard)** | Ringkasan statistik: total lokasi, distribusi kategori, rating, dan sebaran per kota |
-| 🗺️ **Peta Interaktif** | Visualisasi sebaran lokasi dengan Leaflet (mode: semua titik, K-Means, DBSCAN) |
-| 📊 **Analisis K-Means** | Visualisasi PCA, Elbow Method, dan profil tiap cluster |
-| 🔍 **Analisis DBSCAN** | Scatter plot spasial, k-NN Distance Plot, dan distribusi cluster |
-| 📋 **Data & Tabel** | Tabel data lengkap dengan pencarian dan export ke CSV |
-| ℹ️ **Tentang** | Informasi sistem, metode, dan stack teknologi |
-| ⚙️ **Filter Dinamis** | Filter berdasarkan kota, kategori usaha, dan rating minimum |
-| 🎛️ **Parameter Fleksibel** | Slider untuk jumlah K, nilai epsilon ε, dan minPts DBSCAN |
+| 🗺️ **Peta Interaktif**     | Visualisasi sebaran lokasi dengan Leaflet (mode: semua titik, K-Means, DBSCAN)       |
+| 📊 **Analisis K-Means**    | Visualisasi PCA, Elbow Method, dan profil tiap cluster                               |
+| 🔍 **Analisis DBSCAN**     | Scatter plot spasial, k-NN Distance Plot, dan distribusi cluster                     |
+| 📋 **Data & Tabel**        | Tabel data lengkap dengan pencarian dan export ke CSV                                |
+| ℹ️ **Tentang**             | Informasi sistem, metode, dan stack teknologi                                        |
+| ⚙️ **Filter Dinamis**      | Filter berdasarkan kota, kategori usaha, dan rating minimum                          |
+| 🎛️ **Parameter Fleksibel** | Slider untuk jumlah K, nilai epsilon ε, dan minPts DBSCAN                            |
 
 ---
 
@@ -50,18 +52,18 @@ Bulukumba · Sinjai · Selayar · Toraja · Palopo · Luwu
 
 ### Variabel Dataset
 
-| Variabel | Tipe | Deskripsi |
-|---|---|---|
-| `nama_usaha` | Character | Nama titik usaha |
-| `kota` | Factor | Kota / kabupaten |
-| `kategori` | Factor | Jenis usaha (Kuliner, Retail, Jasa, dll.) |
-| `lat` | Numeric | Koordinat lintang |
-| `lng` | Numeric | Koordinat bujur |
-| `rating` | Numeric | Rating usaha (1.0 – 5.0) |
-| `jumlah_review` | Integer | Jumlah ulasan pelanggan |
-| `harga_sewa` | Ordinal | Estimasi harga sewa lokasi |
-| `kepadatan` | Numeric | Skor kepadatan area |
-| `skor_potensi` | Numeric | Skor potensi bisnis (40 – 100) |
+| Variabel        | Tipe      | Deskripsi                                 |
+| --------------- | --------- | ----------------------------------------- |
+| `nama_usaha`    | Character | Nama titik usaha                          |
+| `kota`          | Factor    | Kota / kabupaten                          |
+| `kategori`      | Factor    | Jenis usaha (Kuliner, Retail, Jasa, dll.) |
+| `lat`           | Numeric   | Koordinat lintang                         |
+| `lng`           | Numeric   | Koordinat bujur                           |
+| `rating`        | Numeric   | Rating usaha (1.0 – 5.0)                  |
+| `jumlah_review` | Integer   | Jumlah ulasan pelanggan                   |
+| `harga_sewa`    | Ordinal   | Estimasi harga sewa lokasi                |
+| `kepadatan`     | Numeric   | Skor kepadatan area                       |
+| `skor_potensi`  | Numeric   | Skor potensi bisnis (40 – 100)            |
 
 ### Kategori Usaha
 
@@ -86,12 +88,12 @@ Fitur Input: Latitude, Longitude, Rating, Jumlah Review, Skor Potensi
 
 **Interpretasi Cluster:**
 
-| Label | Kriteria |
-|---|---|
+| Label                    | Kriteria                          |
+| ------------------------ | --------------------------------- |
 | 🟢 Zona Sangat Strategis | Potensi ≥ 75 **DAN** Rating ≥ 4.2 |
-| 🟡 Zona Strategis | Potensi ≥ 60 |
-| 🟠 Zona Potensi Sedang | Potensi ≥ 45 |
-| 🔴 Zona Kurang Strategis | Potensi < 45 |
+| 🟡 Zona Strategis        | Potensi ≥ 60                      |
+| 🟠 Zona Potensi Sedang   | Potensi ≥ 45                      |
+| 🔴 Zona Kurang Strategis | Potensi < 45                      |
 
 ### 2. DBSCAN
 
@@ -111,31 +113,35 @@ Fitur Input: Latitude, Longitude (scaled)
 ## 🛠️ Stack Teknologi
 
 ### Framework & Runtime
-| Package | Versi | Fungsi |
-|---|---|---|
-| `R` | 4.3+ | Bahasa pemrograman utama |
-| `shiny` | ≥1.7 | Web app framework |
-| `shinydashboard` | ≥0.7 | Layout dashboard |
-| `shinycssloaders` | ≥1.0 | Loading spinner animasi |
+
+| Package           | Versi | Fungsi                   |
+| ----------------- | ----- | ------------------------ |
+| `R`               | 4.3+  | Bahasa pemrograman utama |
+| `shiny`           | ≥1.7  | Web app framework        |
+| `shinydashboard`  | ≥0.7  | Layout dashboard         |
+| `shinycssloaders` | ≥1.0  | Loading spinner animasi  |
 
 ### Visualisasi
-| Package | Fungsi |
-|---|---|
-| `leaflet` | Peta interaktif dengan marker dan legenda |
-| `plotly` | Grafik interaktif (scatter, bar, histogram) |
+
+| Package   | Fungsi                                         |
+| --------- | ---------------------------------------------- |
+| `leaflet` | Peta interaktif dengan marker dan legenda      |
+| `plotly`  | Grafik interaktif (scatter, bar, histogram)    |
 | `ggplot2` | Grafik statis (Elbow plot, k-NN Distance plot) |
-| `DT` | Tabel data interaktif |
+| `DT`      | Tabel data interaktif                          |
 
 ### Machine Learning
-| Package | Fungsi |
-|---|---|
-| `cluster` | Algoritma K-Means |
-| `dbscan` | Algoritma DBSCAN & kNNdist |
+
+| Package      | Fungsi                           |
+| ------------ | -------------------------------- |
+| `cluster`    | Algoritma K-Means                |
+| `dbscan`     | Algoritma DBSCAN & kNNdist       |
 | `factoextra` | Visualisasi dan analisis cluster |
 
 ### Data Wrangling
-| Package | Fungsi |
-|---|---|
+
+| Package | Fungsi                           |
+| ------- | -------------------------------- |
 | `dplyr` | Manipulasi dan transformasi data |
 
 ---
@@ -198,15 +204,19 @@ Aplikasi akan terbuka otomatis di browser pada `http://127.0.0.1:PORT`.
 ## 📸 Tampilan Aplikasi
 
 ### Dashboard Beranda
+
 Menampilkan 4 value box (total lokasi, kota, kategori, rata-rata rating) beserta grafik distribusi kategori, rating, dan sebaran per kota.
 
 ### Peta Interaktif
-Peta gelap (*dark map*) berbasis CartoDB DarkMatter yang menampilkan marker lokasi usaha. Klik marker untuk melihat detail (nama, kategori, rating, harga sewa, skor potensi).
+
+Peta gelap (_dark map_) berbasis CartoDB DarkMatter yang menampilkan marker lokasi usaha. Klik marker untuk melihat detail (nama, kategori, rating, harga sewa, skor potensi).
 
 ### Analisis K-Means
+
 Scatter plot PCA 2D dengan warna berbeda per cluster, Elbow Method untuk pemilihan K optimal, dan profil perbandingan antar cluster.
 
 ### Analisis DBSCAN
+
 Visualisasi spasial cluster berdasarkan koordinat, k-NN Distance Plot dengan garis ε, dan distribusi jumlah titik per cluster.
 
 ---
@@ -224,12 +234,12 @@ Visualisasi spasial cluster berdasarkan koordinat, k-NN Distance Plot dengan gar
 
 ## 👤 Informasi Mahasiswa
 
-| | |
-|---|---|
-| **Mata Kuliah** | Machine Learning |
-| **Program Studi** | Bisnis Digital |
-| **Universitas** | Universitas Negeri Makassar (UNM) |
-| **GitHub** | [@ayyi858](https://github.com/ayyi858) |
+|                   |                                        |
+| ----------------- | -------------------------------------- |
+| **Mata Kuliah**   | Machine Learning                       |
+| **Program Studi** | Bisnis Digital                         |
+| **Universitas**   | Universitas Negeri Makassar (UNM)      |
+| **GitHub**        | [@ayyi858](https://github.com/ayyi858) |
 
 ---
 
