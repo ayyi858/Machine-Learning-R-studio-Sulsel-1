@@ -1,6 +1,6 @@
 # 🗺️ Sistem Rekomendasi Lokasi Usaha — Sulawesi Selatan
 
-![alt text](<Cuplikan layar 2026-04-28 185823.png>)
+![alt text](<Cuplikan layar 2026-05-05 073437.png>)
 
 <div align="center">
 
@@ -20,7 +20,7 @@
 Proyek ini merupakan tugas akhir mata kuliah **Machine Learning** pada Program Studi **Bisnis Digital, Universitas Negeri Makassar (UNM)**. Sistem ini membantu pelaku usaha dan UMKM dalam menentukan lokasi bisnis yang paling strategis di Sulawesi Selatan dengan memanfaatkan dua pendekatan _clustering_:
 
 - **K-Means Clustering** — mengelompokkan lokasi berdasarkan kesamaan fitur numerik
-- **DBSCAN** _(Density-Based Spatial Clustering of Applications with Noise)_ — mendeteksi klaster berdasarkan kepadatan spasial dan mengidentifikasi _outlier/noise_
+- **DBSCAN** _(Density-Based Spatialc Clustering of Applications with Noise)_ — mendeteksi klaster berdasarkan kepadatan spasial dan mengidentifikasi _outlier/noise_
 
 Data yang digunakan adalah data simulasi (_dummy_) yang merepresentasikan titik usaha dari **Google Maps** di berbagai kota/kabupaten di Sulawesi Selatan.
 
